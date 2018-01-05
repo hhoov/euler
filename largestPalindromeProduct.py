@@ -4,7 +4,10 @@
 # -----------------------------
 
 def largestPalindromeProd():
-	number = 0
+	firstNumber = 100
+	secondNumber = 200
+	while (firstNumber >= 100 and firstNumber <= 999) and (secondNumber >= 100 and secondNumber <= 999):
+		
 
 
 
