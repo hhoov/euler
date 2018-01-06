@@ -4,25 +4,19 @@
 # -----------------------------
 
 def largestPalindromeProd():
-	firstNumber = 99
-	secondNumber = 10
 	largestPalindrome = 0
-	result = 0
-	while (firstNumber > 10 and firstNumber < 99) and (secondNumber > 10 and secondNumber < 99):
-		result = firstNumber * secondNumber
-		#print("Result: {}".format(result))
-		resultReversed = reverseString(str(result))
-		#print("Reversed result: {}".format(resultReversed))
-		#print("Result AGAIN: {}".format(result))
-		if str(result) == str(resultReversed):
-			largestPalindrome = keepLargestPalindrome(largestPalindrome, result)
-			print("Largest PAL: {}".format(largestPalindrome))
-			firstNumber = firstNumber - 1
-			secondNumber = secondNumber + 1
-		else:
-			firstNumber = firstNumber - 1
-			secondNumber = secondNumber + 1
-	print("Largest palindrome: {0} from the product of {1} and {2}".format(result, firstNumber, secondNumber))
+	for firstNumber in range(999,100,-1):
+		for secondNumber in range(999,100,-1): 
+			result = firstNumber * secondNumber
+			resultReversed = reverseString(str(result))
+
+			if str(result) == str(resultReversed):
+				largestPalindrome = keepLargestPalindrome(largestPalindrome, result)
+				break
+			else:
+				continue
+		
+	print("Largest palindrome: {0} from the product of {1} and {2}".format(largestPalindrome, firstNumber, secondNumber))
 
 def reverseString(inputString):
 	return inputString[::-1]
