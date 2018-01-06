@@ -1,10 +1,22 @@
 
 def smallestMultiple():
 	number = 1
-	while True:
-		for divisor in range (1,10):
-			if number % divisor == 0:
-				continue
-			else:
-				number = number + 1
-				break
+	divisorsAllSatisfied = 1
+	while divisorsAllSatisfied != 20:
+		if number % divisorsAllSatisfied == 0:
+			divisorsAllSatisfied = divisorsAllSatisfied + 1
+			print("Divisors Satisfied: {}".format(divisorsAllSatisfied))
+			print("Number is: {}".format(number))
+			continue
+		else:
+			divisorsAllSatisfied = 1
+			number = number + 1
+			continue
+	print("Smallest number is {}".format(number))
+	print("divisorsAllSatisfied is: {}".format(divisorsAllSatisfied))
+
+def main():
+	smallestMultiple()
+
+if __name__ == '__main__':
+	main()
