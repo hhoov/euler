@@ -1,6 +1,7 @@
 # -----------------------------
 # Project Euler Problem 5: Smallest Multiple
-# 		
+# 		What is the smallest positive number that is evenly divisible by all of the numbers 
+#			from 1 to 20?
 # -----------------------------
 
 def smallestMultiple():
@@ -9,8 +10,9 @@ def smallestMultiple():
 	while divisorsAllSatisfied != 20:
 		if isEvenFactor(number, divisorsAllSatisfied) == True:
 			divisorsAllSatisfied = divisorsAllSatisfied + 1
-			print("Divisors Satisfied: {}".format(divisorsAllSatisfied))
-			print("Number is: {}".format(number))
+			if divisorsAllSatisfied > 17:
+				print("Divisors Satisfied: {}".format(divisorsAllSatisfied))
+				print("Number is: {}".format(number))
 			continue
 		else:
 			divisorsAllSatisfied = 1
@@ -20,7 +22,7 @@ def smallestMultiple():
 	print("divisorsAllSatisfied is: {}".format(divisorsAllSatisfied))
 
 def isEvenFactor(number, divisorsAllSatisfied):
-	number % divisorsAllSatisfied == 0
+	return number % divisorsAllSatisfied == 0
 	
 
 def main():
