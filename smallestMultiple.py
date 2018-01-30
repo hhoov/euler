@@ -5,18 +5,18 @@
 # -----------------------------
 
 def smallestMultiple():
-	number = 1
+	number = 2520
 	divisorsAllSatisfied = 1
-	while divisorsAllSatisfied != 20:
+	while divisorsAllSatisfied != 21:
 		if isEvenFactor(number, divisorsAllSatisfied) == True:
 			divisorsAllSatisfied = divisorsAllSatisfied + 1
-			if divisorsAllSatisfied > 17:
+			if divisorsAllSatisfied >= 19:
 				print("Divisors Satisfied: {}".format(divisorsAllSatisfied))
 				print("Number is: {}".format(number))
 			continue
 		else:
 			divisorsAllSatisfied = 1
-			number = number + 1
+			number = number + 2
 			continue
 	print("Smallest number is {}".format(number))
 	print("divisorsAllSatisfied is: {}".format(divisorsAllSatisfied))
